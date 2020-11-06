@@ -4,8 +4,47 @@ import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 // Types
 import { Todo } from "./components/TodoListItem";
-// Global css
-import "./App.css";
+// Modules
+import styled, { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    list-style-type: none;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  button,
+  input {
+    border: none;
+    background: none;
+  }
+
+  body {
+    font-size: 62.5%;
+  }
+
+  #root {
+    background: #F3FAFB;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .App {
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    height: 600px;
+    border-radius: 20px;
+    padding: 40px;
+  }
+`;
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
@@ -59,7 +98,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <h1>Todo App</h1>
+      <GlobalStyle />
       <TodoInput
         todo={todo}
         handleChange={handleChange}
