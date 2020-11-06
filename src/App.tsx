@@ -6,6 +6,7 @@ import TodoList from "./components/TodoList";
 import { Todo } from "./components/TodoListItem";
 // Modules
 import styled, { createGlobalStyle } from "styled-components";
+import { RiCalendarTodoLine } from "react-icons/ri";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
@@ -43,6 +44,26 @@ const GlobalStyle = createGlobalStyle`
     height: 600px;
     border-radius: 20px;
     padding: 40px;
+  }
+`;
+
+const Title = styled.h1`
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  position: relative;
+  margin-bottom: 30px;
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #eeeeee;
+    position: absolute;
+    top: 130%;
+  }
+  svg {
+    margin-right: 10px;
   }
 `;
 
@@ -99,6 +120,10 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <GlobalStyle />
+      <Title>
+        <RiCalendarTodoLine />
+        Todo App
+      </Title>
       <TodoInput
         todo={todo}
         handleChange={handleChange}
