@@ -29,9 +29,8 @@ const TodoListItem: React.FC<Props> = ({
     <label
       htmlFor={`checkbox-${todo.id}`}
       className={todo.completed ? "done" : undefined}
-    >
-      {todo.name}
-    </label>
+      dangerouslySetInnerHTML={{ __html: todo.name }}
+    />
     <button onClick={() => editTodo(todo)}>EDIT</button>
     <button onClick={() => deleteTodo(todo)}>DELETE</button>
   </li>
