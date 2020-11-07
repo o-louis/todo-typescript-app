@@ -24,7 +24,7 @@ const Field = styled.div`
 `;
 
 const Input = styled.input`
-  padding: 10px 10px;
+  padding: 10px;
   background: #f3fbfb;
   flex: 1 1 100%;
   font-size: 1rem;
