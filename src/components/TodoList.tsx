@@ -1,5 +1,8 @@
 import React from "react";
+// Components
 import TodoListItem, { Todo } from "./TodoListItem";
+// Modules
+import styled from "styled-components";
 
 type Props = {
   todos: Array<Todo>;
@@ -8,6 +11,12 @@ type Props = {
   toggleCompleted: (todo: Todo) => void;
 };
 
+const List = styled.ul`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
 const TodoList: React.FC<Props> = ({
   todos,
   deleteTodo,
@@ -15,7 +24,7 @@ const TodoList: React.FC<Props> = ({
   toggleCompleted,
 }) => {
   return (
-    <ul>
+    <List>
       {todos.map((todo, index) => (
         <TodoListItem
           key={index}
@@ -25,7 +34,7 @@ const TodoList: React.FC<Props> = ({
           toggleCompleted={toggleCompleted}
         />
       ))}
-    </ul>
+    </List>
   );
 };
 
